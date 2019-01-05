@@ -11,7 +11,10 @@
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
+    "node-sass": "^4.11.0",
     "nuxt": "^2.3.4",
+    "sass-loader": "^7.1.0",
+    "source-map-support": "^0.5.9",
     "vuetify": "^1.4.0"
   },
   "devDependencies": {
