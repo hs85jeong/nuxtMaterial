@@ -20,7 +20,10 @@ module.exports = {
    extractCSS: true
  },
  // Load Vuetify into the app
- plugins: ['~/plugins/vuetify'],
+ plugins: [
+   '~/plugins/chartist',
+   '~/plugins/vuetify'
+  ],
  // Load Vuetify CSS globally
  css: ['vuetify/dist/vuetify.min.css']
 }
