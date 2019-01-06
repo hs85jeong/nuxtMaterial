@@ -13,9 +13,7 @@ module.exports = {
     ]
   },
   // Global CSS
- css: [
-   { src: '~/assets/css/material-dashboard.scss', lang: 'scss' }
- ],
+ css: ['~/assets/css/main.css'],
  build: {
    vendor: ['axios'],
    vender: ['vuetify'],
