@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <appDrawer/>
+    <appToolbar/>
     <v-content>
       <nuxt/>
     </v-content>
@@ -9,10 +10,12 @@
 
 <script>
 import appDrawer from '~/components/app/Drawer.vue';
+import appToolbar from '~/components/app/Toolbar.vue';
 
 export default {
   components: {
-    appDrawer
+    appDrawer,
+    appToolbar
   }
 }
 </script>

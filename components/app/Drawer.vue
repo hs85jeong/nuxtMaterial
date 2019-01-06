@@ -1,10 +1,12 @@
 <template>
   <v-navigation-drawer
     id="app-drawer"
+    v-model="inputValue"
     app
     dark
     floating
     persistent
+    mobile-break-point="991"
     width="260"
   >
     <v-img
@@ -27,7 +29,7 @@
             />
           </v-list-tile-avatar>
           <v-list-tile-title class="title">
-            Vuetify Material
+            Vuetify MD
           </v-list-tile-title>
         </v-list-tile>
         <v-divider/>
@@ -53,7 +55,10 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import {
+  mapMutations,
+  mapState
+} from 'vuex';
 
 export default {
   data: () => ({
@@ -63,11 +68,42 @@ export default {
         to: '/dashboard',
         icon: 'mdi-view-dashboard',
         text: 'Dashboard'
+      },
+      {
+        to: '/userprofile',
+        icon: 'mdi-account',
+        text: 'User Profile'
       }
-    ]
+    ],
+    responsive: false
   }),
   computed: {
-    ...mapState('app', ['image', 'color'])
+    ...mapState('app', ['image', 'color']),
+    inputValue: {
+      get () {
+        return this.$store.state.app.drawer;
+      },
+      set (value) {
+        this.setDrawer(value);
+      }
+    }
+  },
+  mounted () {
+    this.onResponsiveInverted();
+    window.addEventListener('resize', this.onResponsiveInverted);
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.onResponsiveInverted);
+  },
+  methods: {
+    ...mapMutations('app', ['setDrawer', 'toggleDrawer']),
+    onResponsiveInverted () {
+      if (window.innerWidth < 991) {
+        this.responsive = true;
+      } else {
+        this.responsive = false;
+      }
+    }
   }
 }
 </script>
@@ -76,11 +112,22 @@ export default {
   #app-drawer {
     .v-list__tile {
       border-radius: 4px;
+
+      &--buy {
+        margin-top: auto;
+        margin-bottom: 17px;
+      }
     }
 
     .v-image__image--contain {
       top: 9px;
       height: 60%;
+    }
+
+    .search-input {
+      margin-bottom: 30px !important;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 </style>

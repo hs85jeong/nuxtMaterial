@@ -10,7 +10,7 @@
         sm12
         lg4
       >
-        Dashboard
+        User Profile
       </v-flex>
     </v-layout>
   </v-container>
@@ -23,7 +23,7 @@ import {
 
 export default {
   mounted () {
-    this.setTitle('Dashboard');
+    this.setTitle('User Profile');
   },
   methods: {
     ...mapMutations('app', ['setTitle'])
