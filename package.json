@@ -4,7 +4,9 @@
   "description": "",
   "author": "Hunseop Jeong <hs85jeong@gmail.com>",
   "scripts": {
-    "dev": "backpack dev"
+    "dev": "backpack dev",
+    "build": "nuxt build && backpack build",
+    "start": "cross-env NODE_ENV=production node build/main.js"
   },
   "dependencies": {
     "@mdi/font": "^3.3.92",
@@ -12,6 +14,7 @@
     "body-parser": "^1.18.3",
     "chartist": "^0.11.0",
     "cookie-parser": "^1.4.3",
+    "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "node-sass": "^4.11.0",
     "nuxt": "^2.3.4",

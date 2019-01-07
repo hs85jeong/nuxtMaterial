@@ -21,7 +21,7 @@ module.exports = {
  },
  // Load Vuetify into the app
  plugins: [
-   '~/plugins/chartist',
+   { src: '~/plugins/chartist', ssr:false },
    '~/plugins/vuetify'
   ],
  // Load Vuetify CSS globally

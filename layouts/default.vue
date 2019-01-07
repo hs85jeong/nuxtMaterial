@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <appDrawer/>
-    <appToolbar/>
+    <app-drawer/>
+    <app-toolbar/>
     <v-content>
       <nuxt/>
-      <appFooter/>
+      <app-footer/>
     </v-content>
   </v-app>
 </template>
